@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var playercard = "card6"
+    var cpucard = "card3"
+    
+    var playerscore = 0
+    var cpuscore = 0
+    
     var body: some View {
+        
         ZStack{
             Image("background-cloth")
                 .resizable()
                 .ignoresSafeArea()
-            
             
             VStack{
                 Spacer()
@@ -21,28 +28,35 @@ struct ContentView: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    Image("card3")
+                    Image(playercard)
                     Spacer()
-                    Image("card3")
+                    Image(cpucard)
                     Spacer()
                     
                 }
                 Spacer()
-                Image("button")
+                
+                Button {
+                    deal()
+                } label: {
+                    Image("button")
+                }
                 Spacer()
                 HStack{
                     Spacer()
                     VStack{
                         Text("Player")
+                            .padding(.bottom,10.0)
                             .font (. headline)
-                        Text("0")
+                        Text(String(playerscore))
                             .font(.largeTitle)
                     }
                     Spacer()
                     VStack{
                         Text("CPU")
+                            .padding(.bottom,10.0)
                             .font (. headline)
-                        Text("0")
+                        Text(String(cpuscore))
                             .font(.largeTitle )
                         
                     }
@@ -54,9 +68,15 @@ struct ContentView: View {
         }
     }
     
+    func deal(){
+        print("Deal Cards")
+    }
+    
+}
+
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
         }
     }
-}
+
