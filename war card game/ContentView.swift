@@ -11,32 +11,44 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             Image("background-cloth")
+                .resizable()
+                .ignoresSafeArea()
+            
+            
             VStack{
+                Spacer()
                 Image("logo")
-                    .padding()
+                Spacer()
                 HStack{
+                    Spacer()
                     Image("card3")
-                        .padding()
+                    Spacer()
                     Image("card3")
+                    Spacer()
                     
                 }
+                Spacer()
                 Image("button")
-                    .padding()
+                Spacer()
                 HStack{
+                    Spacer()
                     VStack{
                         Text("Player")
-                            .padding()
+                    
                             .foregroundColor(.white)
                         Text("0")
                             .foregroundColor(.white)
                     }
+                    Spacer()
                     VStack{
                         Text("CPU")
-                            .padding().foregroundColor(.white)
+                            .foregroundColor(.white)
                         Text("0")
                             .foregroundColor(.white)
                     }
+                    Spacer()
                 }
+                Spacer()
             }
         }
     }
