@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
                 Image("button")
                     .padding()
-                 HStack{
+                HStack{
                     VStack{
                         Text("Player")
                             .padding()
